@@ -1,0 +1,51 @@
+* {
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+body {
+  background-color: rgb(82, 179, 126);
+  text-align: center;
+}
+div {
+  text-align: start;
+}
+#myCheck {
+  padding: 0;
+  width: unset;
+}
+#reset-container {
+  text-align: center;
+}
+button {
+  background-color: rgb(82, 86, 179);
+  border-radius: 6px;
+  border: none;
+  margin: 5px 0;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  text-transform: uppercase;
+  width: 242px;
+  cursor: pointer;
+}
+input {
+  border-radius: 6px;
+  border: 1px solid grey;
+  padding: 10px;
+  text-transform: uppercase;
+  width: 220px;
+  cursor: pointer;
+}
+#results-container {
+  text-align: center;
+}
+
+#placeholder {
+  background-color: white;
+  height: 140px;
+  width: 140px;
+  padding: 50px;
+  margin: 50px auto;
+  border: 1px solid gray;
+  border-radius: 10px;
+  font-size: 80px;
+}

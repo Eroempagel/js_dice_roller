@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/stylesheets/style.css" />
+    <title>Assessment JS Dice Roller</title>
+  </head>
+  <body>
+    <div>
+        Background Music:
+        <input type="checkbox" id="myCheck" onclick="myMusic.play();" autofocus />
+    </div>
+    <div id="reset-container">
+        <button type="reset" id="reset-button">RESET</button><br />
+        NUMBER OF RESETS: <span id="num-resets">0</span>
+      </div>
+    <p id="placeholder"></p>
+    <input
+      type="text"
+      id="num-dice"
+      placeholder="Number of Dice to be rolled"
+    />
+    <input
+      type="text"
+      id="num-sides"
+      placeholder="Num of sides per die"
+    />
+  </br><button id="roll-dice">Roll Dice</button>
+    <button id="show-dice">Show Dice Rolls</button>
+    <div id="results-container">
+        <span id="total">The result of your total roll: </span></br>
+        <ol id="myrolls">Your dice rolls are as follows: </ol>
+    </div>
+    <script src="assets/javascript/main.js"></script>
+  </body>
+</html>
