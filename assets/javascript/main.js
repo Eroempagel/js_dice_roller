@@ -70,7 +70,7 @@
 
 // lets do sound?
 let myMusic;
-myMusic = new sound("assets/audio/TitansEye.mp3");
+myMusic = new sound("assets/audio/PuzzleMusic.mp3");
 
 // may add a checkbox at top of page to play some background music?
 const checkbox = document.querySelector("#myCheck");
@@ -106,25 +106,51 @@ function sound(src) {
 
 // lets do the dice roller
 const myRolls = document.querySelector("#myrolls");
-const totalDice = document.querySelector("#total").value;
+const totalDice = document.querySelector("#placeholder");
 const rollDice = document.querySelector("#roll-dice");
 const numSides = document.querySelector("#num-sides");
+let showDice = document.querySelector("#show-dice");
+const resetButton = document.querySelector("#reset-button");
 let iRandomNumber;
 let numDice;
 let i = 1;
 let diceArray = [];
 let sum = 0;
 
+//lets roll the dice
 rollDice.addEventListener("click", function () {
-  //iRollDice = prompt("how many dice do you want to roll?", 5);
   numDice = document.querySelector("#num-dice");
+  event.preventDefault();
 
   while (i <= Number(numDice.value)) {
     iRandomNumber = Math.ceil(Math.random() * Number(numSides.value));
-    myRolls.innerHTML += "</br>" + "<li>" + iRandomNumber + "</li>";
-    console.log(iRandomNumber);
+    diceArray.push(iRandomNumber);
+    console.log(diceArray);
     i++;
   }
-
+  sum = diceArray.reduce((a, b) => a + b, 0);
+  console.log(sum);
+  totalDice.innerHTML += "Total: " + "</br>" + sum;
   mySound1.play();
+});
+
+//lets show the dice rolls
+showDice.addEventListener("click", function () {
+  showDice = document.querySelector("#show-dice");
+  event.preventDefault();
+  let count = 0;
+  while (count < diceArray.length) {
+    myRolls.innerHTML += "</br>" + "<li>" + diceArray[count] + "</li>";
+    console.log(diceArray[count]);
+    count++;
+  }
+  mySound1.play();
+});
+
+//lets handle the reset button
+resetButton.addEventListener("click", function () {
+  resetButton = document.querySelector("#reset-button");
+  event.preventDefault();
+  form.reset();
+  form.focus();
 });
