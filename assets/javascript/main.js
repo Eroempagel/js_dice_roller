@@ -48,7 +48,7 @@ const numSides = document.querySelector("#num-sides");
 const resetButton = document.querySelector("#reset-button");
 
 let iRandomNumber;
-// where X is the number from the text input box. X is also the number of times you will loop. (4 points)
+// where X is the number from the text input box. X is also the number of times you will loop.
 let X;
 let numDice = X;
 let i = 1;
@@ -94,7 +94,7 @@ showDice.addEventListener("click", function () {
   showDice = document.querySelector("#show-dice");
   event.preventDefault();
 
-  // Loop over the dieRolls array//creating a new List Item for each number and adding that List Item to the innerHTML of the "All Rolls" element.
+  // Loop over the dieRolls array
   let count = 0;
   while (count < dieRolls.length) {
     // creating a new List Item for each number and adding that List Item to the innerHTML of the "All Rolls" element
