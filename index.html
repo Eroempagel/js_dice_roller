@@ -9,32 +9,32 @@
   <body>
     <main>
       <form>
-    <div>
-        Background Music:
-        <input type="checkbox" id="myCheck" onclick="myMusic.play();" />
-    </div>
-    <div id="reset-container">
-        <button id="reset-button">RESET</button><br />
-      </div>
-    <p id="placeholder"></p>
-    <input
-      type="text"
-      id="num-dice"
-      placeholder="Number of Dice to be rolled"
-      autofocus
-    />
-    <input
-      type="text"
-      id="num-sides"
-      placeholder="Num of sides per die"
-    />
-    </br><button id="roll-dice">Roll!</button>
-    <button id="show-dice">Show All Rolls</button>
-    <div id="results-container">
-        <ol id="myrolls">Your dice rolls are as follows: </ol>
-    </div>
-    </form>
-  </main>
+        <div>
+          Background Music:
+          <input type="checkbox" id="myCheck" onclick="myMusic.play();" />
+        </div>
+        <div id="reset-container">
+          <button id="reset-button">RESET</button><br />
+        </div>
+        <p id="dice-total"></p>
+        <input
+          type="text"
+          id="num-dice"
+          placeholder="Number of Dice to be rolled"
+          autofocus
+        />
+        <input
+          type="text"
+          id="num-sides"
+          placeholder="Num of sides per die"
+        />
+        </br><button id="roll-dice">Roll!</button>
+        <button id="show-dice">Show All Rolls</button>
+        <div id="results">
+          <ol id="all-rolls">All Rolls: </ol>
+        </div>
+      </form>
+    </main>
     <script src="assets/javascript/main.js"></script>
   </body>
 </html>

@@ -35,21 +35,36 @@ input {
   width: 220px;
   cursor: pointer;
 }
-/*
-#results-container {
+#results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+#myrolls {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgb(238, 238, 238);
+}
+
+/* An attempt to make each "dice roll" element 
+   look more like an actual six-sided (cube) die */
+li {
   text-align: center;
   background-color: white;
-  height: 240px;
-  width: 240px;
-  padding: 10px;
-  margin: 50px auto;
+  height: 25px;
+  width: 25px;
+  padding: 5px;
+  margin: 5px auto;
   border: 1px solid gray;
-  border-radius: 10px;
-  font-size: 12px;
+  border-radius: 5px;
+  font-size: 20px;
 }
-*/
 
-#placeholder {
+#dice-total {
   text-align: center;
   background-color: white;
   height: 100px;
