@@ -66,6 +66,10 @@ rollDice.addEventListener("click", function () {
   // then assign it to the event listener
   X = document.querySelector("#num-dice");
   event.preventDefault();
+  diceTotal.innerHTML = "";
+  dieRolls = [];
+  i = 1;
+  sum = 0;
 
   while (i <= Number(X.value)) {
     iRandomNumber = Math.ceil(Math.random() * Number(numSides.value));
@@ -93,6 +97,7 @@ rollDice.addEventListener("click", function () {
 showDice.addEventListener("click", function () {
   showDice = document.querySelector("#show-dice");
   event.preventDefault();
+  allRolls.innerHTML = "";
 
   // Loop over the dieRolls array
   let count = 0;
@@ -113,8 +118,11 @@ showDice.addEventListener("click", function () {
 resetButton.addEventListener("click", function () {
   resetButton = document.querySelector("#reset-button");
   event.preventDefault();
+
   // reset the entire form including dieRolls array, and innerHTML of total and All Rolls elements
-  form.reset();
-  // focus to number of dice input field
-  form.numDice.focus();
+  dieRolls = [];
+  diceTotal.innerHTML = "";
+  allRolls.innerHTML = "";
+  checkbox = document.querySelector("#myCheck");
+  checkbox.checked = false;
 });
