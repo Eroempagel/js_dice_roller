@@ -125,4 +125,5 @@ resetButton.addEventListener("click", function () {
   allRolls.innerHTML = "";
   checkbox = document.querySelector("#myCheck");
   checkbox.checked = false;
+  myMusic.stop();
 });
