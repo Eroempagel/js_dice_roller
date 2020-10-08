@@ -76,16 +76,23 @@ rollDice.addEventListener("click", function () {
 
     // Push the result of each roll onto your dieRolls array
     dieRolls.push(iRandomNumber);
+    // Sum all your dice rolls
+    sum += iRandomNumber;
     console.log(dieRolls);
     i++;
   }
 
   // Sum all your dice rolls
-  sum = dieRolls.reduce((a, b) => a + b, 0);
+  // sum = dieRolls.reduce((a, b) => a + b, 0);
+  // was originally summing the array
+  // moved sum into the while loop
+  // and concatinated the random numbers into sum
   console.log(sum);
 
   // display the result in the Total area on the page using innerHTML
   diceTotal.innerHTML += "Total: " + "</br>" + sum;
+
+  // sound of the dice rolling
   mySound1.play();
 });
 
@@ -123,6 +130,7 @@ resetButton.addEventListener("click", function () {
   dieRolls = [];
   diceTotal.innerHTML = "";
   allRolls.innerHTML = "";
+  // reset the checkbox as well
   checkbox = document.querySelector("#myCheck");
   checkbox.checked = false;
   myMusic.stop();
