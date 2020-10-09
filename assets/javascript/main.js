@@ -40,6 +40,7 @@ function sound(src) {
 // lets do the dice roller
 const allRolls = document.querySelector("#all-rolls");
 const diceTotal = document.querySelector("#dice-total");
+const numDice = document.querySelector("#num-dice");
 const rollDice = document.querySelector("#roll-dice");
 let showDice = document.querySelector("#show-dice");
 
@@ -48,9 +49,9 @@ const numSides = document.querySelector("#num-sides");
 const resetButton = document.querySelector("#reset-button");
 
 let iRandomNumber;
-// where X is the number from the text input box. X is also the number of times you will loop.
-let X;
-let numDice = X;
+// where X is the number from the text input box.
+// X is also the number of times you will loop.
+let X = numDice;
 let i = 1;
 //create a variable named dieRolls
 let dieRolls = [];
@@ -71,23 +72,27 @@ rollDice.addEventListener("click", function () {
   i = 1;
   sum = 0;
 
+  // It is time to write a loop
+  // Use Math.random() to simulate rolling a single six-sided die X number of times,
+  // where X is the number from the text input box.
+  // X is also the number of times you will loop
   while (i <= Number(X.value)) {
     iRandomNumber = Math.ceil(Math.random() * Number(numSides.value));
 
     // Push the result of each roll onto your dieRolls array
     dieRolls.push(iRandomNumber);
+    console.log(dieRolls);
+
     // Sum all your dice rolls
     sum += iRandomNumber;
-    console.log(dieRolls);
+    console.log(sum);
     i++;
   }
 
   // Sum all your dice rolls
   // sum = dieRolls.reduce((a, b) => a + b, 0);
-  // was originally summing the array
-  // moved sum into the while loop
-  // and concatinated the random numbers into sum
-  console.log(sum);
+  // console.log(sum);
+  // moved sum into the loop and concatinated the random numbers
 
   // display the result in the Total area on the page using innerHTML
   diceTotal.innerHTML += "Total: " + "</br>" + sum;
@@ -114,6 +119,7 @@ showDice.addEventListener("click", function () {
     console.log(dieRolls[count]);
     count++;
   }
+  // sound of the dice rolling
   mySound1.play();
 });
 
@@ -121,12 +127,14 @@ showDice.addEventListener("click", function () {
  * lets handle the reset button *
  ********************************/
 
-// Create a reset button which, on click, will empty the array and the innerHTML of your Total and All Rolls elements.
+// Create a reset button which, on click, will empty the array
+// and the innerHTML of your Total and All Rolls elements.
 resetButton.addEventListener("click", function () {
   resetButton = document.querySelector("#reset-button");
   event.preventDefault();
 
-  // reset the entire form including dieRolls array, and innerHTML of total and All Rolls elements
+  // reset the entire form including dieRolls array,
+  // and innerHTML of total and All Rolls elements
   dieRolls = [];
   diceTotal.innerHTML = "";
   allRolls.innerHTML = "";
