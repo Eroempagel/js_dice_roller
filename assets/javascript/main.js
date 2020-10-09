@@ -77,7 +77,7 @@ rollDice.addEventListener("click", function () {
   // where X is the number from the text input box.
   // X is also the number of times you will loop
   while (i <= Number(X.value)) {
-    iRandomNumber = Math.ceil(Math.random() * Number(numSides.value));
+    iRandomNumber = Math.floor(Math.random() * Number(numSides.value)) + 1;
 
     // Push the result of each roll onto your dieRolls array
     dieRolls.push(iRandomNumber);
