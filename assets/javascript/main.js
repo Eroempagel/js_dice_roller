@@ -130,7 +130,6 @@ showDice.addEventListener("click", function () {
 // Create a reset button which, on click, will empty the array
 // and the innerHTML of your Total and All Rolls elements.
 resetButton.addEventListener("click", function () {
-  resetButton = document.querySelector("#reset-button");
   event.preventDefault();
 
   // reset the entire form including dieRolls array,
@@ -138,8 +137,10 @@ resetButton.addEventListener("click", function () {
   dieRolls = [];
   diceTotal.innerHTML = "";
   allRolls.innerHTML = "";
+  // reset the input fields
+  numDice.value = "";
+  numSides.value = "";
   // reset the checkbox as well
-  checkbox = document.querySelector("#myCheck");
   checkbox.checked = false;
   myMusic.stop();
 });
